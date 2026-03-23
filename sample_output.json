@@ -1,0 +1,6 @@
+{
+  "endpoint": "/api/user/profile",
+  "risk": "high",
+  "possible_vuln": "IDOR",
+  "suggestion": "Try accessing other user IDs"
+}
