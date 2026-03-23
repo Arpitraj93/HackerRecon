@@ -44,7 +44,8 @@ git clone git@github.com:Arpitraj93/HackerRecon.git
 cd HackerRecon
 pip install -r requirements.txt
 
+```
+
 ---
 
-
-## Use this tool as you want but for educational purpose and must me authorized target .
+ Use this tool as you want but for educational purpose and must me authorized target .
