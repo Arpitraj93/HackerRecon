@@ -1,0 +1,126 @@
+[
+    {
+        "endpoint": "/rest/user/security-question?email=",
+        "score": 9,
+        "attack_type": "Parameter Fuzzing",
+        "steps": [
+            "ffuf -u \"/rest/user/security-question?email=FUZZ\" -w /usr/share/wordlists/dirb/common.txt",
+            "Check for unexpected responses",
+            "Look for IDOR or injection"
+        ]
+    },
+    {
+        "endpoint": "/rest/user/login",
+        "score": 9,
+        "attack_type": "Auth Attack",
+        "steps": [
+            "Intercept login request in Burp Suite",
+            "Send to Intruder",
+            "Use common password wordlist",
+            "Check for weak authentication"
+        ]
+    },
+    {
+        "endpoint": "/rest/user/change-password?current=",
+        "score": 9,
+        "attack_type": "Account Takeover",
+        "steps": [
+            "Intercept reset request",
+            "Modify token/email",
+            "Check for missing validation",
+            "Test token reuse"
+        ]
+    },
+    {
+        "endpoint": "/rest/user/authentication-details/",
+        "score": 9,
+        "attack_type": "API Fuzzing",
+        "steps": [
+            "ffuf -u /rest/user/authentication-details/FUZZ -w /usr/share/wordlists/dirb/common.txt",
+            "Look for hidden endpoints",
+            "Check response differences"
+        ]
+    },
+    {
+        "endpoint": "/rest/admin",
+        "score": 8,
+        "attack_type": "Access Control",
+        "steps": [
+            "Try accessing directly \u2192 /rest/admin",
+            "Check without authentication",
+            "Test privilege escalation"
+        ]
+    },
+    {
+        "endpoint": "/rest/saveLoginIp",
+        "score": 7,
+        "attack_type": "Auth Attack",
+        "steps": [
+            "Intercept login request in Burp Suite",
+            "Send to Intruder",
+            "Use common password wordlist",
+            "Check for weak authentication"
+        ]
+    },
+    {
+        "endpoint": "/rest/user/whoami",
+        "score": 6,
+        "attack_type": "API Fuzzing",
+        "steps": [
+            "ffuf -u /rest/user/whoami/FUZZ -w /usr/share/wordlists/dirb/common.txt",
+            "Look for hidden endpoints",
+            "Check response differences"
+        ]
+    },
+    {
+        "endpoint": "/rest/user/reset-password",
+        "score": 6,
+        "attack_type": "Account Takeover",
+        "steps": [
+            "Intercept reset request",
+            "Modify token/email",
+            "Check for missing validation",
+            "Test token reuse"
+        ]
+    },
+    {
+        "endpoint": "/rest/user",
+        "score": 6,
+        "attack_type": "API Fuzzing",
+        "steps": [
+            "ffuf -u /rest/user/FUZZ -w /usr/share/wordlists/dirb/common.txt",
+            "Look for hidden endpoints",
+            "Check response differences"
+        ]
+    },
+    {
+        "endpoint": "/rest/track-order",
+        "score": 6,
+        "attack_type": "API Fuzzing",
+        "steps": [
+            "ffuf -u /rest/track-order/FUZZ -w /usr/share/wordlists/dirb/common.txt",
+            "Look for hidden endpoints",
+            "Check response differences"
+        ]
+    },
+    {
+        "endpoint": "/rest/order-history",
+        "score": 6,
+        "attack_type": "API Fuzzing",
+        "steps": [
+            "ffuf -u /rest/order-history/FUZZ -w /usr/share/wordlists/dirb/common.txt",
+            "Look for hidden endpoints",
+            "Check response differences"
+        ]
+    },
+    {
+        "endpoint": "/api/Users",
+        "score": 6,
+        "attack_type": "API Fuzzing",
+        "steps": [
+            "ffuf -u /api/Users/FUZZ -w /usr/share/wordlists/dirb/common.txt",
+            "Look for hidden endpoints",
+            "Check response differences"
+        ]
+    }
+]

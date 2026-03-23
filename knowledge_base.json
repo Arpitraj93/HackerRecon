@@ -1,0 +1,44 @@
+{
+  "403": {
+    "cloudflare": [
+      "Insight: Cloudflare WAF detected",
+      "Actions:",
+      "- Use authenticated session via browser + Burp Suite",
+      "- Modify headers (User-Agent, X-Forwarded-For)",
+      "- Analyze API requests in DevTools",
+      "Impact:",
+      "- Possible access control bypass if misconfigured"
+    ],
+    "default": [
+      "Insight: Access denied",
+      "Actions:",
+      "- Check authentication requirements",
+      "- Try different headers and user-agents",
+      "- Identify alternate endpoints (/api, /admin)",
+      "Impact:",
+      "- Hidden functionality or restricted endpoints"
+    ]
+  },
+  "endpoint_patterns": {
+    "user": [
+      "Test for IDOR by modifying user IDs",
+      "Check unauthorized data access"
+    ],
+    "admin": [
+      "Test privilege escalation",
+      "Check access without admin role"
+    ],
+    "login": [
+      "Test authentication bypass",
+      "Try SQL injection on login"
+    ],
+    "api": [
+      "Check authentication on API endpoints",
+      "Test parameter manipulation"
+    ],
+    "default": [
+      "Test endpoint manually",
+      "Check authentication and parameters"
+    ]
+  }
+}
